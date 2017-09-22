@@ -44,8 +44,12 @@ int main(int argc, char **argv) {
 
 			cat(is);
 
-			// Can't detect close failure because EOF already set error
+			is.clear();
 			is.close();
+			if (is.fail() || is.bad()) {
+				std::cerr << "Error closing\n";
+				exit(EXIT_FAILURE);
+			}
 		}
 	}
 
