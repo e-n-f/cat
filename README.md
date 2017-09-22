@@ -18,6 +18,6 @@ C++ problems
 
 C++ does not distinguish meaningfully between end-of-file and a read error, so
 
-    ./cat < /etc
+    ./cat-c++ < /etc
 
-will produce an empty output instead of an error.
+will produce an empty output instead of an is-a-directory error.
