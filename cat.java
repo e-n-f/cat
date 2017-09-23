@@ -17,8 +17,11 @@ public class cat {
 				break;
 			}
 
-			// PrintStream.write() does not throw or return errors
 			System.out.write(buf, 0, n);
+			if (System.out.checkError()) {
+				System.err.println("Error writing");
+				System.exit(1);
+			}
 		}
 	}
 
